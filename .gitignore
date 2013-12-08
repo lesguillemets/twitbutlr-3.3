@@ -1,0 +1,7 @@
+*.pyc
+keys.py
+lastread.txt
+twythoncheck.py
+__pycache__/
+tmp/
+log/
