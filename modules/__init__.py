@@ -3,5 +3,5 @@
 __all__ = ['weather',
            'bf',
            'wparticle',
-           'rgb',
+           'rgbsample',
            ]

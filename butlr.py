@@ -111,16 +111,18 @@ class Butlr(object):
                 username, langcode, articlename))
     
     def rgb(self, tweet):
-        r,g,b = tweet['text'].split()[1:4]
+        r,g,b = tweet['text'].split()[2:5]
         username = tweet['user']['screen_name']
-        samplefile = make_rgb_sample(r,g,b)
+        samplefile = rgbsample.make_rgb_sample(r,g,b)
         # update with image
         with open(samplefile, 'rb') as sample:
-            t.update_status_with_media(
+            self.t.update_status_with_media(
                 status = "@{}".format(username),
                 in_reply_to_status_id = tweet['id'],
                 media = sample
             )
+        print("created color {}, requested by @{}.".format(
+            (r,g,b), username))
         
     
     def bf(self, tweet):
